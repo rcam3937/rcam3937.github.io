@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="calc.js"></script>
+</head>
+<body>
+    <h1>Score Calculator</h1>
+    <form id="myForm">
+        <fieldset>
+            <legend>Lower Ledge</legend>
+            <label for="ll-auto">Auto</label><br>
+            <input type="number", id="ll-auto", name="auto", min="0", max="75"><br>
+            <label for="ll-telop">Telop</label><br>
+            <input type="number", id="ll-telop", name="telop", min="0", max="75"><br>
+            <label for="ll-true">Bonus</label>
+            <input type="checkbox", id="ll-true", name="true">
+        </fieldset>
+        <fieldset>
+            <legend>Upper Ledge</legend>
+            <label for="ul-auto">Auto</label><br>
+            <input type="number", id="ul-auto", name="auto", min="0", max="75"><br>
+            <label for="ul-telop">Telop</label><br>
+            <input type="number", id="ul-telop", name="telop", min="0", max="75"><br>
+            <label for="ul-true">Bonus</label>
+            <input type="checkbox", id="ul-true", name="true">
+        </fieldset>
+        <fieldset>
+            <legend>Summit</legend>
+            <label for="s-auto">Auto</label><br>
+            <input type="number", id="s-auto", name="auto", min="0", max="75"><br>
+            <label for="s-telop">Telop</label><br>
+            <input type="number", id="s-telop", name="telop", min="0", max="75"><br>
+            <label for="s-true">Bonus</label>
+            <input type="checkbox", id="s-true", name="true">
+        </fieldset>
+        <fieldset>
+            <legend>Traverse</legend>
+            <label for="t-auto-true">Auto? </label>
+            <input type="checkbox" id="t-auto-true" name="true"><br>
+            <label for="t-telop-true">Telop? </label>
+            <input type="checkbox" id="t-telop-true" name="true">
+        </fieldset>
+        <fieldset>
+            <legend>Penalties</legend>
+            <label for="amount">Amount</label><br>
+            <input type="number", id="amount", name="amount", min="0"><br>
+            <p>All penalties are minus 3 points</p>
+        </fieldset>
+    <button id="calculate-btn" type="button" onclick="calcLedgePoints()">Calculate</button>
+    <h3 id="score">Score: </h3>
+    </form>
+</body>
+</html>
