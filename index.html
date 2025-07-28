@@ -10,10 +10,14 @@
 <body>
     <h1>Score Calculator</h1>
     <form id="myForm">
+        <label for="match">Match:</label>
+        <input type="text", id="match", name="match">
         <fieldset>
             <legend>Lower Ledge</legend>
             <label for="ll-auto">Auto</label><br>
             <input type="number", id="ll-auto", name="auto", min="0", max="75"><br>
+            <button type="button", id="plus", onclick="addElement('ll-auto')">+</button>
+            <button type="button", id="minus", onclick="removeElement('ll-auto')">-</button><br><br>
             <label for="ll-telop">Telop</label><br>
             <input type="number", id="ll-telop", name="telop", min="0", max="75"><br>
             <label for="ll-true">Bonus? </label>

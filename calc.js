@@ -92,6 +92,10 @@ function calcTotalPoints() {
 
     const scoreField = document.getElementById("score");
     scoreField.textContent = "Score: " + total;
+
+    if(total < 0) {
+        total = 0;
+    }
     
     return total;
 }
