@@ -86,6 +86,18 @@ function calcPenalties() {
     return penalties
 }
 
+function addElement(id) {
+    const field = document.getElementById(id);
+    //console.log(field.value);
+    field.value = parseInt(field.value || 0) + 1;
+}
+
+function removeElement(id) {
+    const field = document.getElementById(id);
+    //console.log(field.value);
+    field.value = parseInt(field.value || 0) - 1;
+}
+
 function calcTotalPoints() {
     total = calcLedgePoints() + calcTraversePoints() + calcPenalties();
     console.log(total);
