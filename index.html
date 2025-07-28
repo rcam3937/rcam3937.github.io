@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <title>title</title>
+    <meta charset="UTF-8"/>
+    <title>Lego Club Scoring</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <script src="calc.js"></script>
@@ -41,8 +41,13 @@
             <legend>Traverse</legend>
             <label for="t-auto-true">Auto? </label>
             <input type="checkbox" id="t-auto-true" name="true"><br>
-            <label for="t-telop-true">Telop? </label>
+            <label>Telop: </label><br>
+            <label for="t-telop-true">Lower Traverse? </label>
             <input type="checkbox" id="t-telop-true" name="true">
+            <label for="upper-telop-true">Upper Traverse? </label>
+            <input type="checkbox" id="upper-telop-true" name="true">
+            <label for="hanging-telop-true">Hanging Traverse? </label>
+            <input type="checkbox" id="hanging-telop-true" name="true">
         </fieldset>
         <fieldset>
             <legend>Penalties</legend>
@@ -50,7 +55,7 @@
             <input type="number", id="amount", name="amount", min="0"><br>
             <p>All penalties are minus 3 points</p>
         </fieldset>
-    <button id="calculate-btn" type="button" onclick="calcLedgePoints()">Calculate</button>
+    <button id="calculate-btn" type="button" onclick="calcTotalPoints()">Calculate</button>
     <h3 id="score">Score: </h3>
     </form>
 </body>

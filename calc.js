@@ -2,15 +2,19 @@
 lowerLedgeValueAuto = 2;
 upperLedgeValueAuto = 3;
 summitValueAuto = 4;
+traverseAutoValue = 5;
 //Telop
 lowerLedgeValueTelop = 1;
 upperLedgeValueTelop = 2;
 summitValueTelop = 3;
+lowerTraverseVaue = 5;
+upperTraverseValue = 10;
+hangingTraverseValue = 10;
 
 penaltiesValue = -3
 
 function calcLedgePoints() {
-    const llTotal = 0;
+    llTotal = 0;
     const llAuto = (document.getElementById("ll-auto").value || 0) * lowerLedgeValueAuto;
     const llTelop = (document.getElementById("ll-telop").value || 0) * lowerLedgeValueTelop;
     const llBonus = document.getElementById("ll-true").checked;
@@ -21,7 +25,7 @@ function calcLedgePoints() {
         llTotal = llAuto + llTelop;
     }
 
-    const ulTotal = 0;
+    ulTotal = 0;
     const ulAuto = (document.getElementById("ul-auto").value || 0) * upperLedgeValueAuto;
     const ulTelop = (document.getElementById("ul-telop").value || 0) * upperLedgeValueTelop;
     const ulBonus = document.getElementById("ul-true").checked;
@@ -32,12 +36,12 @@ function calcLedgePoints() {
         ulTotal = ulAuto + ulTelop;
     }
 
-    const sTotal = 0;
+    sTotal = 0;
     const sAuto = (document.getElementById("s-auto").value || 0) * summitValueAuto;
     const sTelop = (document.getElementById("s-telop").value || 0) * summitValueTelop;
     const sBonus = document.getElementById("s-true");
     if(sBonus) {
-        sTotal = (slAuto + sTelop) * 2;
+        sTotal = (sAuto + sTelop) * 2;
     } else {
         sTotal = sAuto + sTelop;
     }
@@ -46,24 +50,48 @@ function calcLedgePoints() {
 
     console.log(score);
 
-    //const scoreField = document.getElementById("score");
-    //scoreField.textContent = "Score: " + score;
-
     return score;
 }
 
 function calcTraversePoints() {
+    score = 0;
 
+    const traverseAuto = document.getElementById("t-auto-true").checked;
+    const traverseTelop = document.getElementById("t-telop-true").checked;
+    const upperTraverse = document.getElementById("upper-telop-true").checked;
+    const hanging = document.getElementById("hanging-telop-true").checked;
+
+    if(traverseAuto) {
+        score = score + lowerTraverseValue;
+    }
+    if(traverseTelop) {
+        score = score + lowerTraverseVaue;
+    }
+    if(upperTraverse) {
+        score = score + upperTraverseValue;
+    }
+    if(hanging) {
+        score = score + hangingTraverseValue;
+    }
+
+
+    return score;
 }
 
 function calcPenalties() {
     const penalties = (document.getElementById("amount").value || 0) * (-3);
 
-    console.log("penalties:" + penalties)
+    console.log("penalties:" + penalties);
 
     return penalties
 }
 
 function calcTotalPoints() {
-    return calcLedgePoints() + calcTraversePoints() + calcPenalties();
+    total = calcLedgePoints() + calcTraversePoints() + calcPenalties();
+    console.log(total);
+
+    const scoreField = document.getElementById("score");
+    scoreField.textContent = "Score: " + total;
+    
+    return total;
 }
