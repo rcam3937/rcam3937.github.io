@@ -7,6 +7,8 @@ lowerLedgeValueTelop = 1;
 upperLedgeValueTelop = 2;
 summitValueTelop = 3;
 
+penaltiesValue = -3
+
 function calcLedgePoints() {
     const llAuto = (document.getElementById("ll-auto").value || 0) * lowerLedgeValueAuto;
     const llTelop = (document.getElementById("ll-telop").value || 0) * lowerLedgeValueTelop;
@@ -21,6 +23,22 @@ function calcLedgePoints() {
 
     console.log(score);
 
-    const scoreField = document.getElementById("score");
-    scoreField.textContent = "Score: " + score;
+    //const scoreField = document.getElementById("score");
+    //scoreField.textContent = "Score: " + score;
+
+    return score;
 }
+
+function calcTraversePoints() {
+    
+}
+
+function calcPenalties() {
+    const penalties = (document.getElementById("amount").value || 0) * (-3);
+
+    console.log("penalties:" + penalties)
+
+    return penalties
+}
+
+
